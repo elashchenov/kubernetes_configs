@@ -13,9 +13,8 @@ pipeline {
     stages {
         stage("test") {
             steps {
-                sh 'echo $BUILD_NUMBER'
-                sh 'echo $build_num'
                 sh 'sed -i "" "s/$[build_num-1]/$[build_num]/g" $deployment_yaml'
+                sh 'git status'
             }
         }
     }
