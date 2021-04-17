@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh 'sed -i "" "s/:$[build_num-1]/:$[build_num]/g" $deployment_yaml'
                 sh 'git add $deployment_yaml'
-                sh 'git commit -m "[JENKINS] docker image version update to $[build_num]"
+                sh 'git commit -m "[JENKINS] docker image version update to $[build_num]"'
                 withCredentials([usernamePassword(credentialsId: 'github_lashchenov', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                         sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/lashchenov123/kubernetes_configs.git')
                     }
