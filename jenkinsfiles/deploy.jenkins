@@ -13,7 +13,8 @@ pipeline {
     stages {
         stage("test") {
             steps {
-                sh 'sed -i "" "s/$[build_num-1]/$[build_num]/g" $deployment_yaml'
+                sh 'sed -i "" "s/:$[build_num-1]/:$[build_num]/g" $deployment_yaml'
+                sh 'cat $deployment_yaml'
                 sh 'git status'
             }
         }
