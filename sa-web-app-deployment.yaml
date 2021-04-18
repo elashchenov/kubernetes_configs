@@ -21,7 +21,7 @@ spec:
         app: sa-web-app
     spec:
       containers:
-      - image: lashchenov99/sa-webapp:8
+      - image: lashchenov99/sa-webapp:9
         imagePullPolicy: Always
         name: sa-web-app
         env:
