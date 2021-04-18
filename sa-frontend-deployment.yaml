@@ -21,7 +21,7 @@ spec:
         app: sa-frontend                                  # 6
     spec:
       containers:
-        - image: lashchenov99/sa-frontend:14
+        - image: lashchenov99/sa-frontend:16
           imagePullPolicy: Always                         # 7
           name: sa-frontend
           ports:
