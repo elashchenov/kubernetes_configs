@@ -25,7 +25,7 @@ pipeline {
         stage("kubernetes deploy") {
             steps {
                 echo " ============== kubernetes deploy ================== "
-                sh 'kubectl apply -f $deployment_yaml $service_yaml'
+                sh 'kubectl apply -f $deployment_yaml -f $service_yaml'
             }
         }
     }
